@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
+
+
+    // Relación uno a uno
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\User');
+    }
 }

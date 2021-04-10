@@ -65,4 +65,23 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\Profile');
     }
+
+    // Relación uno a mucho
+
+    public function course_dictated()
+    {
+        return $this->hasMany('App\Models\Course');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Models\Review');
+    }
+
+    // Relación muchos a muchos
+
+    public function courses_enrolled()
+    {
+        return $this->belongsToMany('App\Models\Course');
+    }
 }
