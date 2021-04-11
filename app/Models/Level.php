@@ -9,6 +9,8 @@ class Level extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     // Relación uno a muchos
     public function courses()
     {

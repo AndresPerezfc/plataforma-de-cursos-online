@@ -9,6 +9,8 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     // Relación uno a mucho inversa
 
     public function user()
