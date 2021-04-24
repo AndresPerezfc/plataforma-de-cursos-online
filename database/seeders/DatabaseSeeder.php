@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\Storage;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -16,6 +18,10 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
+        Storage::deleteDirectory('cursos');
+
+        Storage::makeDirectory('cursos');
+
         $this->call(UserSeeder::class);
 
         $this->call(LevelSeeder::class);
@@ -23,5 +29,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
 
         $this->call(PriceSeeder::class);
+
+        $this->call(PlatformSeeder::class);
+
+        $this->call(CourseSeeder::class);
     }
 }
